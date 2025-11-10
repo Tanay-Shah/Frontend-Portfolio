@@ -3,7 +3,7 @@ import NestedComments from '../Comments-section/components/nested-comments'
 
 const CommentSection = () => {
   return (
-    <NestedComments/>
+   <></>
   )
 }
 

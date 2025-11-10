@@ -1,17 +1,9 @@
 import React from 'react'
 
-const Comment = ({commentData}) => {
-
-
-
+const Comment = () => {
 
   return (
-    // {commentData.map((e)=>{
-    //   return(<>
-    //     {e}
-    //   </>)
-    // })}
-    <></>
+  <></>
   )
 }
 
