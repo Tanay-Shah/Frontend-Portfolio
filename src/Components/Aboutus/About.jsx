@@ -12,7 +12,7 @@ const profile = {
   email: "tanay.shah2558@gmail.com",
   github: "https://github.com/Tanay-Shah",
   linkedin: "https://www.linkedin.com/in/tanay001",
-  resume: "/Tanay_Resume.pdf", // Update your resume path
+  resume: "/src/assets/Resume_Tanaay_Shah.pdf",
   summary: `Results-oriented Software Engineer with experience in full-stack development using React, Next.js, and MERN stack. Passionate about building scalable UIs, reusable components, and integrating AI workflows to deliver production-ready features.`,
   skills: [
     "React",
