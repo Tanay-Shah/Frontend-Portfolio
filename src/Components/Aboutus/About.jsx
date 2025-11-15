@@ -4,6 +4,7 @@
 
 import React from "react";
 import { FaEnvelope, FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
+import resumeUrl from "../../assets/Resume_Tanaay_Shah.pdf"; // adjust relative path as needed
 
 const profile = {
   name: "Tanay Shah",
@@ -113,7 +114,8 @@ export default function About() {
               </a>
 
               <a
-                href={profile.resume}
+                href={resumeUrl}
+                target="_blank" rel="noopener noreferrer"
                 download
                 className="flex items-center gap-2 bg-gradient-to-r from-blue-400 to-green-300 text-black font-semibold px-4 py-2 rounded-lg shadow-lg hover:opacity-90"
               >
