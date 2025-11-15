@@ -3,7 +3,7 @@
 // Drop directly into your React project after installing Tailwind.
 
 import React from "react";
-import { FaEnvelope, FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaDownload,FaUserCircle } from "react-icons/fa";
 import resumeUrl from "../../assets/Resume_Tanaay_Shah.pdf"; // adjust relative path as needed
 
 const profile = {
@@ -73,9 +73,7 @@ export default function About() {
       <div className="w-full max-w-7xl bg-slate-900/40 border border-white/5 backdrop-blur-xl rounded-xl p-6 shadow-2xl">
         {/* HEADER */}
         <header className="flex gap-6 items-center mb-6">
-          <div className="w-28 h-28 rounded-xl bg-gradient-to-br from-blue-400/20 to-green-300/20 flex items-center justify-center">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-r from-blue-400 to-green-300" />
-          </div>
+        <FaUserCircle className="text-9xl pr-1 pb-10 pl-1 text-slate-400" />
 
           <div>
             <h1 className="text-3xl font-bold text-slate-100">
