@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   const location = useLocation();
@@ -8,99 +9,133 @@ export default function Footer() {
   if (shouldHideFooter) return null;
 
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-blue-900 to-black text-white">
-      <div className="mx-auto w-full max-w-screen-xl px-4 py-8 md:py-10">
-        <div className="md:flex md:justify-between md:items-center">
+    <footer className="w-full bg-slate-950 border-t border-white/10 backdrop-blur py-10">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="md:flex md:justify-between md:items-start">
           {/* Logo */}
-          <div className="mb-6 md:mb-0 flex items-center">
-            <Link to="/" className="flex items-center space-x-3">
-              <span className="text-xl font-bold tracking-wide">CodePlayground</span>
+          <div className="mb-8 md:mb-0">
+            <Link to="/" className="text-2xl font-extrabold text-slate-100 tracking-wide">
+              Tanay Shah
             </Link>
+            <p className="text-slate-400 mt-2 text-sm max-w-xs">
+              Building modern web experiences with React, Tailwind and AI-powered workflows.
+            </p>
           </div>
 
-          {/* Links */}
-          <div className="grid grid-cols-2 gap-8 sm:gap-12 sm:grid-cols-3 text-sm font-medium">
+          {/* Footer Links */}
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 text-sm">
+            {/* Resources */}
             <div>
-              <h2 className="mb-4 text-white font-semibold uppercase">Resources</h2>
+              <h3 className="text-slate-200 font-semibold mb-4 uppercase tracking-wide">
+                Resources
+              </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="hover:underline hover:text-gray-200">
+                  <Link to="/" className="text-slate-400 hover:text-blue-300 transition">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:underline hover:text-gray-200">
+                  <Link to="/about" className="text-slate-400 hover:text-blue-300 transition">
                     About
                   </Link>
                 </li>
+                <li>
+                  <Link to="/contact" className="text-slate-400 hover:text-blue-300 transition">
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
+
+            {/* Follow */}
             <div>
-              <h2 className="mb-4 text-white font-semibold uppercase">Follow Us</h2>
+              <h3 className="text-slate-200 font-semibold mb-4 uppercase tracking-wide">
+                Follow
+              </h3>
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="https://github.com/"
+                    href="https://github.com/Tanay-Shah"
                     target="_blank"
-                    rel="noreferrer"
-                    className="hover:underline hover:text-gray-200"
+                    className="text-slate-400 hover:text-blue-300 transition"
                   >
-                    Github
+                    GitHub
                   </a>
                 </li>
                 <li>
-                  <Link to="/" className="hover:underline hover:text-gray-200">
-                    Discord
-                  </Link>
+                  <a
+                    href="https://www.linkedin.com/in/tanay001"
+                    target="_blank"
+                    className="text-slate-400 hover:text-blue-300 transition"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    className="text-slate-400 hover:text-blue-300 transition"
+                  >
+                    Twitter
+                  </a>
                 </li>
               </ul>
             </div>
+
+            {/* Legal */}
             <div>
-              <h2 className="mb-4 text-white font-semibold uppercase">Legal</h2>
+              <h3 className="text-slate-200 font-semibold mb-4 uppercase tracking-wide">
+                Legal
+              </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="#" className="hover:underline hover:text-gray-200">
+                  <a className="text-slate-400 hover:text-blue-300 transition">
                     Privacy Policy
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to="#" className="hover:underline hover:text-gray-200">
+                  <a className="text-slate-400 hover:text-blue-300 transition">
                     Terms & Conditions
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <hr className="my-6 border-gray-200/30 sm:mx-auto lg:my-8" />
+        {/* Divider */}
+        <div className="border-t border-white/10 my-8" />
 
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-100 sm:text-center">
-            © {new Date().getFullYear()}{" "}
-            <a href="#" className="hover:underline">
-              Tanay Shah
-            </a>
-            . All Rights Reserved.
+        {/* Bottom Row */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+          <span className="text-slate-500 text-sm">
+            © {new Date().getFullYear()} Tanay Shah. All rights reserved.
           </span>
 
           {/* Social Icons */}
-          <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
-            <a href="#" className="text-gray-200 hover:text-white">
-              <i className="fab fa-facebook-f"></i>
-              <span className="sr-only">Facebook</span>
+          <div className="flex gap-5 mt-4 sm:mt-0">
+            <a
+              href="https://github.com/Tanay-Shah"
+              target="_blank"
+              className="text-slate-300 hover:text-white text-lg transition"
+            >
+              <FaGithub />
             </a>
-            <a href="#" className="text-gray-200 hover:text-white">
-              <i className="fab fa-discord"></i>
-              <span className="sr-only">Discord</span>
+            <a
+              href="https://www.linkedin.com/in/tanay001"
+              target="_blank"
+              className="text-slate-300 hover:text-blue-400 text-lg transition"
+            >
+              <FaLinkedin />
             </a>
-            <a href="#" className="text-gray-200 hover:text-white">
-              <i className="fab fa-github"></i>
-              <span className="sr-only">GitHub</span>
-            </a>
-            <a href="#" className="text-gray-200 hover:text-white">
-              <i className="fab fa-twitter"></i>
-              <span className="sr-only">Twitter</span>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              className="text-slate-300 hover:text-blue-300 text-lg transition"
+            >
+              <FaTwitter />
             </a>
           </div>
         </div>

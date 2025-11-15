@@ -1,140 +1,198 @@
+// src/components/Contact.jsx
+import React, { useState } from "react";
+import {
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaDownload,
+} from "react-icons/fa";
+
+const profile = {
+  name: "Tanay Shah",
+  location: "Pune, India",
+  email: "tanay.shah2558@gmail.com",
+  phone: "+91 83570 70065",
+  github: "https://github.com/Tanay-Shah",
+  linkedin: "https://www.linkedin.com/in/tanay001",
+  resume: "/Tanay_Resume.pdf", // update to your deployed resume path
+};
+
 export default function Contact() {
-    return (
-        <div className="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
-            <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div className="mt-8 overflow-hidden">
-                    <div className="grid grid-cols-1 md:grid-cols-2">
-                        <div className="p-6 mr-2 bg-gray-100 sm:rounded-lg">
-                            <h1 className="text-3xl sm:text-4xl text-gray-800 font-extrabold tracking-tight">
-                                Get in touch: 
-                            </h1>
-                            <p className="text-normal text-lg sm:text-xl font-medium text-gray-600 mt-2">
-                                Fill in the form to start a conversation
-                            </p>
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [status, setStatus] = useState(null);
 
-                            <div className="flex items-center mt-8 text-gray-600">
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-500"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.5"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                    />
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.5"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                    />
-                                </svg>
-                                <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    Acme Inc, Street, State, Postal Code
-                                </div>
-                            </div>
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setForm((s) => ({ ...s, [name]: value }));
+  }
 
-                            <div className="flex items-center mt-4 text-gray-600">
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-500"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.5"
-                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                                    />
-                                </svg>
-                                <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    +44 1234567890
-                                </div>
-                            </div>
+  function handleSubmit(e) {
+    e.preventDefault();
+    // Simple client-side feedback (replace with your API endpoint if needed)
+    setStatus("sending");
+    setTimeout(() => {
+      setStatus("sent");
+      // reset form
+      setForm({ name: "", email: "", phone: "", message: "" });
+      // keep feedback short
+      setTimeout(() => setStatus(null), 3000);
+    }, 800);
+  }
 
-                            <div className="flex items-center mt-2 text-gray-600">
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.5"
-                                    viewBox="0 0 24 24"
-                                    className="w-8 h-8 text-gray-500"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="1.5"
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                    />
-                                </svg>
-                                <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    info@acme.org
-                                </div>
-                            </div>
-                        </div>
+  return (
+    <section className="w-full min-h-screen bg-slate-950 flex items-center justify-center py-12 px-4">
+      <div className="w-full max-w-5xl bg-slate-900/40 border border-white/5 backdrop-blur rounded-xl shadow-2xl overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+          {/* Left card: contact details */}
+          <div className="p-6 rounded-lg bg-slate-900/60 border border-white/3">
+            <h2 className="text-3xl font-extrabold text-slate-100">Get in touch</h2>
+            <p className="text-slate-300 mt-3">
+              I'm open to opportunities and interviews. Fill in the form or use the contact details below — I typically reply within 24–48 hours.
+            </p>
 
-                        <form className="p-6 flex flex-col justify-center">
-                            <div className="flex flex-col">
-                                <label for="name" className="hidden">
-                                    Full Name
-                                </label>
-                                <input
-                                    type="name"
-                                    name="name"
-                                    id="name"
-                                    placeholder="Full Name"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                />
-                            </div>
-
-                            <div className="flex flex-col mt-2">
-                                <label for="email" className="hidden">
-                                    Email
-                                </label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    placeholder="Email"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                />
-                            </div>
-
-                            <div className="flex flex-col mt-2">
-                                <label for="tel" className="hidden">
-                                    Number
-                                </label>
-                                <input
-                                    type="tel"
-                                    name="tel"
-                                    id="tel"
-                                    placeholder="Telephone Number"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="md:w-32 bg-orange-700 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-orange-600 transition ease-in-out duration-300"
-                            >
-                                Submit
-                            </button>
-                        </form>
-                    </div>
+            <div className="mt-6 space-y-4 text-slate-200">
+              <div className="flex items-start gap-4">
+                <span className="text-blue-400 text-xl mt-1"><FaMapMarkerAlt /></span>
+                <div>
+                  <div className="text-sm font-semibold">Location</div>
+                  <div className="text-slate-300 text-sm">{profile.location}</div>
                 </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <span className="text-green-300 text-xl mt-1"><FaPhone /></span>
+                <div>
+                  <div className="text-sm font-semibold">Phone</div>
+                  <a
+                    href={`tel:${profile.phone.replace(/\s+/g, "")}`}
+                    className="text-slate-300 text-sm hover:text-green-300"
+                  >
+                    {profile.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <span className="text-orange-300 text-xl mt-1"><FaEnvelope /></span>
+                <div>
+                  <div className="text-sm font-semibold">Email</div>
+                  <a
+                    href={`mailto:${profile.email}`}
+                    className="text-slate-300 text-sm hover:text-orange-300"
+                  >
+                    {profile.email}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4 mt-3">
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-slate-300 hover:text-white text-2xl"
+                  aria-label="GitHub"
+                >
+                  <FaGithub />
+                </a>
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-slate-300 hover:text-blue-400 text-2xl"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin />
+                </a>
+
+                <a
+                  href={profile.resume}
+                  download
+                  className="ml-auto inline-flex items-center gap-2 bg-gradient-to-r from-blue-400 to-green-300 text-black px-4 py-2 rounded-lg font-semibold shadow-lg hover:opacity-95"
+                >
+                  <FaDownload /> Resume
+                </a>
+              </div>
             </div>
+          </div>
+
+          {/* Right card: contact form */}
+          <div className="p-6 rounded-lg bg-slate-900/60 border border-white/3">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <div>
+                <label htmlFor="name" className="text-slate-300 text-sm font-medium">Full name</label>
+                <input
+                  id="name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  className="mt-2 w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 focus:ring-2 focus:ring-blue-400 outline-none"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="text-slate-300 text-sm font-medium">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  className="mt-2 w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 focus:ring-2 focus:ring-orange-300 outline-none"
+                  placeholder="you@example.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="text-slate-300 text-sm font-medium">Phone</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  className="mt-2 w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 focus:ring-2 focus:ring-green-300 outline-none"
+                  placeholder="+91 8XXXXXXXXX"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="text-slate-300 text-sm font-medium">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  rows="5"
+                  className="mt-2 w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 focus:ring-2 focus:ring-indigo-300 outline-none"
+                  placeholder="Tell me about your project / role / opportunity..."
+                />
+              </div>
+
+              <div className="flex items-center gap-3 mt-2">
+                <button
+                  type="submit"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-blue-400 to-green-300 text-black font-semibold rounded-lg shadow hover:brightness-95 transition"
+                >
+                  {status === "sending" ? "Sending..." : "Send message"}
+                </button>
+
+                {status === "sent" && (
+                  <span className="text-sm text-green-300">Thanks — I’ll get back to you soon.</span>
+                )}
+              </div>
+
+              <p className="text-xs text-slate-500 mt-4">
+                By contacting me you agree to be replied for professional opportunities. I typically respond within 24–48 hours.
+              </p>
+            </form>
+          </div>
         </div>
-    );
+      </div>
+    </section>
+  );
 }
