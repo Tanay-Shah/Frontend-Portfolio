@@ -115,7 +115,7 @@ export default function Footer() {
           </span>
 
           {/* Social Icons */}
-          <div className="flex gap-5 mt-4 sm:mt-0">
+          <div className="flex gap-5 mt-4 sm:mt-0 items-center">
             <a
               href="https://github.com/Tanay-Shah"
               target="_blank"
@@ -136,6 +136,12 @@ export default function Footer() {
               className="text-slate-300 hover:text-blue-300 text-lg transition"
             >
               <FaTwitter />
+            </a>
+            <a
+              href="#top"
+              className="text-slate-300 hover:text-blue-300 text-lg transition"
+            >
+            Go to Top
             </a>
           </div>
         </div>

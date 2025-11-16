@@ -15,7 +15,7 @@ export default function Home() {
       desc: "Comment section with nested reply feature",
       link: "/comments",
       icon: <FaComments className="text-3xl text-green-300" />,
-      inprogress: true,
+      inprogress: false,
     },
   ];
 

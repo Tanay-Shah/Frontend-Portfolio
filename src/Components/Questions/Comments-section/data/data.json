@@ -10,7 +10,15 @@
         "content": "This is a reply to the first comment",
         "votes": 3,
         "timestamp": "2024-06-16T11:00:00Z",
+        "replies": [
+          {
+        "id": 2,
+        "content": "This is a reply to the first comment's comment",
+        "votes": 3,
+        "timestamp": "2024-06-16T11:00:00Z",
         "replies": []
+      }
+    ]
       },
       {
         "id": 3,

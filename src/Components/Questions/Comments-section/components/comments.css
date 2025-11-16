@@ -1,0 +1,42 @@
+.comments {
+  background: #fff;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.comments .text {
+  display: block;
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.actions span {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.actions span:hover {
+  color: #111;
+}
+
+.actions span:nth-child(2):hover {
+  color: #0073ff; /* Reply hover blue */
+}
+
+textarea {
+  margin-top: 12px;
+}
