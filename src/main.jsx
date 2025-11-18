@@ -8,7 +8,9 @@ import About from './Components/Aboutus/About.jsx'
 import Game from './Components/Questions/Game/game.jsx'
 import Contact from './Components/Contact/Contact.jsx'
 import CommentSection from './Components/Questions/Comments-section/commentSection.jsx'
+import OtpLogin from './Components/Questions/otp-login/otpLogin.jsx'
 import User,{gitAlert} from './Components/user/User.jsx'
+import ProgressBar from './Components/Questions/progress-bar/progressBar.jsx'
 
 // const router = createBrowserRouter([
 //     {
@@ -38,7 +40,9 @@ const router=createBrowserRouter(
     <Route path='contact' element={<Contact/>}/>
     <Route path='about' element={<About/>}/>
     <Route path='game' element={<Game/>}/>
-     <Route path='comments' element={<CommentSection/>}/>
+    <Route path='comments' element={<CommentSection/>}/>
+    <Route path='OtpLogin' element={<OtpLogin/>}/>
+    <Route path='progressBar' element={<ProgressBar/>}/>
     <Route loader={gitAlert} path='github/:name' element={<User/>}/>
     </Route>
   )
