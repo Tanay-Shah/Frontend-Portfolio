@@ -20,7 +20,7 @@ function ProgressBar() {
   };
 
   return (
-    <div className="wrapper">
+    <div className="wrapperr">
       <h1 style={{ fontSize: "22px" }}>Progress Bar</h1>
       <div className="container">
         <div className="bar" style={{ width: `${progress}%` }}>

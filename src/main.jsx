@@ -11,6 +11,7 @@ import CommentSection from './Components/Questions/Comments-section/commentSecti
 import OtpLogin from './Components/Questions/otp-login/otpLogin.jsx'
 import User,{gitAlert} from './Components/user/User.jsx'
 import ProgressBar from './Components/Questions/progress-bar/progressBar.jsx'
+import TicketApp from './Components/Questions/movie-ticket-window/ticketApp.jsx'
 
 // const router = createBrowserRouter([
 //     {
@@ -43,6 +44,7 @@ const router=createBrowserRouter(
     <Route path='comments' element={<CommentSection/>}/>
     <Route path='OtpLogin' element={<OtpLogin/>}/>
     <Route path='progressBar' element={<ProgressBar/>}/>
+    <Route path='ticketApp' element={<TicketApp/>}/>
     <Route loader={gitAlert} path='github/:name' element={<User/>}/>
     </Route>
   )

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { FaGamepad, FaComments, FaVoteYea} from "react-icons/fa";
+import { FaGamepad, FaComments, FaVoteYea } from "react-icons/fa";
 
 export default function Home() {
   const projects = [
@@ -24,12 +24,19 @@ export default function Home() {
       icon: <FaVoteYea className="text-3xl text-green-300" />,
       inprogress: false,
     },
-        {
+    {
       title: "Progress Bar",
       desc: "Progress Bar component",
       link: "/progressBar",
       icon: <FaVoteYea className="text-3xl text-green-300" />,
       inprogress: false,
+    },
+    {
+      title: "Movie Ticket Window",
+      desc: "Here you can select seats and book movie Tickets",
+      link: "/ticketApp",
+      icon: <FaVoteYea className="text-3xl text-green-300" />,
+      inprogress: true,
     },
   ];
 
