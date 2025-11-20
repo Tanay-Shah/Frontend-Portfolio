@@ -36,7 +36,7 @@ export default function Home() {
       desc: "Here you can select seats and book movie Tickets",
       link: "/ticketApp",
       icon: <FaVoteYea className="text-3xl text-green-300" />,
-      inprogress: true,
+      inprogress: false,
     },
   ];
 

@@ -1,0 +1,86 @@
+  const premium = 250;
+  const vip = 350;
+  const regular = 150;
+
+  export default [
+    // Regular rows: A, B, C
+    [
+      { categeory: "regular", seat: 1, row: "A", price: regular, isSelected: false },
+      { categeory: "regular", seat: 2, row: "A", price: regular, isSelected: false },
+      { categeory: "regular", seat: 3, row: "A", price: regular, isSelected: false },
+      { categeory: "regular", seat: 4, row: "A", price: regular, isSelected: false },
+      { categeory: "regular", seat: 5, row: "A", price: regular, isSelected: false },
+      { categeory: "regular", seat: 6, row: "A", price: regular, isSelected: false },
+      { categeory: "regular", seat: 7, row: "A", price: regular, isSelected: false },
+      { categeory: "regular", seat: 8, row: "A", price: regular, isSelected: false },
+    ],
+    [
+      { categeory: "regular", seat: 1, row: "B", price: regular, isSelected: false },
+      { categeory: "regular", seat: 2, row: "B", price: regular, isSelected: false },
+      { categeory: "regular", seat: 3, row: "B", price: regular, isSelected: false },
+      { categeory: "regular", seat: 4, row: "B", price: regular, isSelected: false },
+      { categeory: "regular", seat: 5, row: "B", price: regular, isSelected: false },
+      { categeory: "regular", seat: 6, row: "B", price: regular, isSelected: false },
+      { categeory: "regular", seat: 7, row: "B", price: regular, isSelected: false },
+      { categeory: "regular", seat: 8, row: "B", price: regular, isSelected: false },
+    ],
+    [{ categeory: "regular", seat: 1, row: "C", price: regular, isSelected: false },
+      { categeory: "regular", seat: 2, row: "C", price: regular, isSelected: false },
+      { categeory: "regular", seat: 3, row: "C", price: regular, isSelected: false },
+      { categeory: "regular", seat: 4, row: "C", price: regular, isSelected: false },
+      { categeory: "regular", seat: 5, row: "C", price: regular, isSelected: false },
+      { categeory: "regular", seat: 6, row: "C", price: regular, isSelected: false },
+      { categeory: "regular", seat: 7, row: "C", price: regular, isSelected: false },
+      { categeory: "regular", seat: 8, row: "C", price: regular, isSelected: false },
+    ],
+    // Premium rows: D, E, F
+    [
+      { categeory: "premium", seat: 1, row: "D", price: premium, isSelected: false },
+      { categeory: "premium", seat: 2, row: "D", price: premium, isSelected: false },
+      { categeory: "premium", seat: 3, row: "D", price: premium, isSelected: false },
+      { categeory: "premium", seat: 4, row: "D", price: premium, isSelected: false },
+      { categeory: "premium", seat: 5, row: "D", price: premium, isSelected: false },
+      { categeory: "premium", seat: 6, row: "D", price: premium, isSelected: false },
+      { categeory: "premium", seat: 7, row: "D", price: premium, isSelected: false },
+      { categeory: "premium", seat: 8, row: "D", price: premium, isSelected: false },
+    ],
+    [
+      { categeory: "premium", seat: 1, row: "E", price: premium, isSelected: false },
+      { categeory: "premium", seat: 2, row: "E", price: premium, isSelected: false },
+      { categeory: "premium", seat: 3, row: "E", price: premium, isSelected: false },
+      { categeory: "premium", seat: 4, row: "E", price: premium, isSelected: false },
+      { categeory: "premium", seat: 5, row: "E", price: premium, isSelected: false },
+      { categeory: "premium", seat: 6, row: "E", price: premium, isSelected: false },
+      { categeory: "premium", seat: 7, row: "E", price: premium, isSelected: false },
+      { categeory: "premium", seat: 8, row: "E", price: premium, isSelected: false },
+    ],
+    [
+      { categeory: "premium", seat: 1, row: "F", price: premium, isSelected: false },
+      { categeory: "premium", seat: 2, row: "F", price: premium, isSelected: false },
+      { categeory: "premium", seat: 3, row: "F", price: premium, isSelected: false },
+      { categeory: "premium", seat: 4, row: "F", price: premium, isSelected: false },
+      { categeory: "premium", seat: 5, row: "F", price: premium, isSelected: false },
+      { categeory: "premium", seat: 6, row: "F", price: premium, isSelected: false },
+      { categeory: "premium", seat: 7, row: "F", price: premium, isSelected: false },
+      { categeory: "premium", seat: 8, row: "F", price: premium, isSelected: false },
+    ],
+    // VIP rows: G, H
+    [
+      { categeory: "vip", seat: 1, row: "G", price: vip, isSelected: false },
+      { categeory: "vip", seat: 2, row: "G", price: vip, isSelected: false },
+      { categeory: "vip", seat: 3, row: "G", price: vip, isSelected: false },
+      { categeory: "vip", seat: 4, row: "G", price: vip, isSelected: false },
+      { categeory: "vip", seat: 5, row: "G", price: vip, isSelected: false },
+      { categeory: "vip", seat: 6, row: "G", price: vip, isSelected: false },
+      { categeory: "vip", seat: 7, row: "G", price: vip, isSelected: false },
+      { categeory: "vip", seat: 8, row: "G", price: vip, isSelected: false },
+    ],
+    [      { categeory: "vip", seat: 1, row: "H", price: vip, isSelected: false },
+      { categeory: "vip", seat: 2, row: "H", price: vip, isSelected: false },
+      { categeory: "vip", seat: 3, row: "H", price: vip, isSelected: false },
+      { categeory: "vip", seat: 4, row: "H", price: vip, isSelected: false },
+      { categeory: "vip", seat: 5, row: "H", price: vip, isSelected: false },
+      { categeory: "vip", seat: 6, row: "H", price: vip, isSelected: false },
+      { categeory: "vip", seat: 7, row: "H", price: vip, isSelected: false },
+      { categeory: "vip", seat: 8, row: "H", price: vip, isSelected: false },]
+  ];

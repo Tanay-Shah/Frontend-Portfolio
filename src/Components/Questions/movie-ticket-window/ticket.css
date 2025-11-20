@@ -1,0 +1,177 @@
+:root{
+  --bg-1: #071026;
+  --card: #071428;
+  --muted: #98a0b3;
+  --accent: #6c5ce7;
+  --accent-2: #7dd3fc;
+  --available: linear-gradient(180deg,#0f2b3a,#073544);
+  --selected: linear-gradient(180deg,#16a34a,#0f8b46);
+  --booked: linear-gradient(180deg,#7b1e2d,#5a1220);
+  --vip: linear-gradient(180deg,#f59e0b,#c17a05);
+  --glass: rgba(255,255,255,0.02);
+  font-family: Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+}
+
+/* Outer card */
+.movieWindow{
+  width: 100%;
+  max-width: 1024px;
+  margin: 28px auto;
+  padding: 22px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--card), #041226);
+  color: #e6eef8;
+  box-shadow: 0 18px 50px rgba(2,6,23,0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Visual "SCREEN" label above rows (no markup change) */
+.movieWindow::before{
+  content: "SCREEN";
+  display:block;
+  text-align:center;
+  font-size:12px;
+  letter-spacing:2px;
+  color: var(--muted);
+  margin: -6px 0 6px;
+  padding-bottom:6px;
+  border-bottom: 1px dashed rgba(255,255,255,0.03);
+}
+
+/* Each row wrapper */
+.seatRowMain{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  padding: 6px 8px;
+}
+
+/* Label on left */
+.seatRowMain > span:first-child{
+  width: 48px;
+  text-align:center;
+  color: var(--muted);
+  font-weight:700;
+  font-size:14px;
+}
+
+/* Seats container - CENTER seats in the middle */
+.seatRow{
+  display:flex;
+  justify-content:center;    /* centers seats horizontally */
+  align-items:center;
+  gap: 10px;
+  padding: 6px;
+  width: calc(100% - 64px);
+  flex-wrap: wrap;           /* will wrap on narrow screens */
+}
+
+/* Base seat style */
+.seats{
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:13px;
+  color: #dff3ff;
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: transform .14s ease, box-shadow .14s ease, opacity .14s ease, background .14s ease;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.55), inset 0 -2px 0 rgba(255,255,255,0.02);
+  user-select: none;
+}
+
+/* Hover & focus */
+.seats:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(2,6,23,0.65);
+}
+.seats:focus{
+  outline: 3px solid rgba(108,92,231,0.12);
+  transform: translateY(-6px);
+}
+
+/* States */
+.seats.selected{
+  background: var(--selected);
+  color: #fff;
+  box-shadow: 0 16px 36px rgba(16,128,63,0.22);
+  border-color: rgba(255,255,255,0.06);
+}
+
+.seats.booked,
+.seats.booked:hover{
+  background: var(--booked);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.95;
+}
+
+.seats.vip{
+  background: var(--vip);
+  color: #2a1200;
+  border-color: rgba(255,255,255,0.06);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.02);
+}
+
+.seats.premium{
+  background: linear-gradient(180deg,#8b5cf6,#6c42e3);
+  color: #fff;
+}
+
+/* Prevent long rows from overflowing the container on small screens */
+.movieWindow { overflow: hidden; }
+.seatRow { max-width: 100%; }
+
+/* Submit button (uses existing button element) */
+.movieWindow > button{
+  align-self: flex-end;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  color: #fff;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 10px 30px rgba(108,92,231,0.22);
+  transition: transform .12s ease, opacity .12s ease;
+}
+.movieWindow > button:hover{ transform: translateY(-3px); }
+.movieWindow > button:disabled{ opacity:0.5; cursor:not-allowed; transform:none; box-shadow:none; }
+
+/* Booking summary area (the last div in your markup) */
+.movieWindow > div:last-child{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  margin-top:6px;
+}
+.movieWindow > div:last-child > span{ color: var(--muted); font-weight:700; }
+.movieWindow > div:last-child > div{ display:flex; gap:8px; flex-wrap:wrap; }
+.movieWindow > div:last-child > div > span{
+  background: rgba(255,255,255,0.02);
+  padding:6px 10px;
+  border-radius:8px;
+  color:#cfe9ff;
+  font-weight:600;
+  font-size:13px;
+}
+
+/* Small-screen responsiveness */
+@media (max-width:720px){
+  .movieWindow{ padding:14px; border-radius:12px; }
+  .seatRowMain > span:first-child{ width:36px; font-size:13px; }
+  .seats{ width:40px; height:40px; min-width:40px; font-size:12px; border-radius:8px; }
+  .movieWindow > button { width: 100%; align-self: stretch; padding: 12px; }
+  .movieWindow > div:last-child { flex-direction: column; align-items: flex-start; gap:8px; }
+}
